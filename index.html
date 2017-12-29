@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pallindrome Test</title>  
+    <script type="text/javascript">
+    
+// primary function	
+	function pal(){
+		var userInput = document.getElementById("input").value;
+		var arr = userInput.split("");
+		
+		var text1 = "";
+		var text2 = "";
+		var reverseInput = "";
+		var i = 0;
+		var result = "";
+
+		for (i=0; i < userInput.length; i++) {
+			 text1 += arr[i];
+			 document.getElementById("text1").innerHTML = text1;	   
+		}
+		
+		for (i = (userInput.length-1); i >= 0; i--) {
+			reverseInput += arr[i];
+			document.getElementById("reverseInput").innerHTML = reverseInput;	   
+		}
+
+		if (text1 == reverseInput){
+			window.alert("your input is a pallindrome")
+		} else {
+			window.alert("your input is NOT a pallindrome")
+		}
+		
+		
+}  // end function pal
+
+	</script>
+  </head>
+  <body>
+   
+<h2>Pallindrome test.</h2>
+
+	  <h4>Input a word to test if it is a pallindrome.</h4>
+	  <p>A palindrome is a word, line, verse, number, or sentence reading the same backward as forward, i.e., madam, A Man A Plan A Canal Panama.  </p>
+  
+    <form method="post" enctype="multipart/form-data">  
+      <input type="text" name="input" id="input" />Text
+       <p><button type="button" onclick="pal();">Submit</button></p>   
+    </form> 
+        
+    <p id="text1"></p>
+    <p id="reverseInput"></p>
+        
+  </body>
+</html>
+
